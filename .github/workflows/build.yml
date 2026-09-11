@@ -17,6 +17,7 @@ jobs:
       - name: Install Theos and SDK
         run: |
           git clone --recursive https://github.com/theos/theos.git /home/runner/theos
+          rm -rf /home/runner/theos/sdks
           git clone --depth 1 https://github.com/theos/sdks.git /home/runner/theos/sdks
 
       - name: Build Tweak

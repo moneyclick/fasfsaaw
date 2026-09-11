@@ -1,11 +1,12 @@
-TARGET := iphone:clang:latest:15.0
+﻿TARGET := iphone:clang:latest:15.0
 INSTALL_TARGET_PROCESSES = OzonBank
 ARCHS = arm64 arm64e
 
+THEOS ?= /home/runner/theos
 include /makefiles/common.mk
 
 TWEAK_NAME = OzonFakeBalance
 OzonFakeBalance_FILES = Tweak.x
 OzonFakeBalance_CFLAGS = -fobjc-arc
 
-include /tweak.mk
+include /makefiles/tweak.mk

@@ -14,14 +14,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential git perl clang libssl-dev
 
-      - name: Install Theos
+      - name: Install Theos and SDK
         run: |
-          git clone --recursive https://github.com/theos/theos.git ~/theos
-          echo  THEOS=~/theos >> 
+          git clone --recursive https://github.com/theos/theos.git /home/runner/theos
+          curl -sL https://github.com/theos/sdks/releases/download/v13.0/iPhoneOS16.5.sdk.tar.xz | tar -xJ -C /home/runner/theos/sdks
 
       - name: Build Tweak
         run: |
-          export THEOS=~/theos
+          export THEOS=/home/runner/theos
           make package FINALPACKAGE=1
 
       - name: Upload Artifacts

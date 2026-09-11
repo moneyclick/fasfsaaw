@@ -1,0 +1,9 @@
+Package: com.sa1zy.ozonfakebalance
+Name: OzonFakeBalance
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Fake balance tweak for OzonBank iOS
+Maintainer: Sa1zy
+Author: Sa1zy
+Section: Tweaks
